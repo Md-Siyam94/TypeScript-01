@@ -1,5 +1,5 @@
 {
-    // 
+    // Assignment-01
     function formatString(input1: string, input2?: boolean) {
         if (input2) {
             const text = input1.toUpperCase();
@@ -107,15 +107,46 @@
         Saturday,
         Sunday
     }
-    const getDayType =(day: Day): string=>{
-        if(day === Day.Sunday){
+    const getDayType = (day: Day): string => {
+        if (day === Day.Sunday) {
             return "Weekend"
-        }else{
+        } else {
             return "Weekday"
         }
     }
     const dayName = getDayType(Day.Sunday)
     // console.log(dayName);
+
+
+    const squareNumber = async (num: number): Promise<number> => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (num < 0) {
+                    reject(new Error("Negative number not allowed"));
+                } else {
+                    resolve(num * num);
+                }
+            }, 1000);
+        });
+    }
+
+    squareNumber(5)
+    // .then(result => console.log("Square:", result))
+    // .catch(error => console.error("Error:", error.message));
+
+
+    const concatenateArrays = <T>(...arrays: T[][]): T[] => {
+         return ([] as T[]).concat(...arrays);
+    }
+
+   const concatenat = concatenateArrays(["a", "b"], ["c",'d']);      
+    
+    // console.log(concatenat);
+
+
+
+
+
 
 
 
