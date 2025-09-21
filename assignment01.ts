@@ -1,5 +1,7 @@
 {
     // Assignment-01
+
+    
     function formatString(input1: string, input2?: boolean) {
         if (input2) {
             const text = input1.toUpperCase();
@@ -28,7 +30,21 @@
     // filterByRating(books)
 
 
-    //  TODO: 3 number need to add
+       const squareNumber = async (num: number): Promise<number> => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (num < 0) {
+                    reject(new Error("Negative number not allowed"));
+                } else {
+                    resolve(num * num);
+                }
+            }, 1000);
+        });
+    }
+    squareNumber(5)
+    // .then(result => console.log("Square:", result))
+    // .catch(error => console.error("Error:", error.message));
+
 
 
     class Vehical {
@@ -118,23 +134,7 @@
     // console.log(dayName);
 
 
-    const squareNumber = async (num: number): Promise<number> => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                if (num < 0) {
-                    reject(new Error("Negative number not allowed"));
-                } else {
-                    resolve(num * num);
-                }
-            }, 1000);
-        });
-    }
-
-    squareNumber(5)
-    // .then(result => console.log("Square:", result))
-    // .catch(error => console.error("Error:", error.message));
-
-
+ 
     const concatenateArrays = <T>(...arrays: T[][]): T[] => {
          return ([] as T[]).concat(...arrays);
     }
